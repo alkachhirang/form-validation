@@ -1,12 +1,7 @@
-  .form-container {
+  .custom-container {
       max-width: 600px !important;
       margin: 50px auto !important;
   }
-        .animation-container {
-            max-width: 600px;
-            margin: 50px auto;
-            text-align: center;
-        }
     
         #lottie-animation {
             width: 100%;
