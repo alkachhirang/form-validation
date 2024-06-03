@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html mode="light" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -11,40 +11,45 @@
 </head>
 
 <body>
-    <!------------------form-validation----------------------->
-    <div class="container custom-container">
-        <h2 class="text-center">Form-validation</h2>
-        <form id="myForm" class="needs-validation" novalidate>
-            <div class="form-group">
-                <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                <div class="invalid-feedback">
-                    Please enter your name.
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="email">Email address</label>
-                <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                <div class="invalid-feedback">
-                    Please enter a valid email address.
-                </div>
-            </div>
-            <div class="form-group">
-                <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Enter your password" required>
-                <div class="invalid-feedback">
-                    Please enter your password.
-                </div>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-        </form>
-    </div>
-    <!--------------------lottie-animation------------------->
-    <div class="container custom-container">
-        <h2 class="text-center">Lottie Animation Example</h2>
-        <div id="lottie-animation"></div>
-    </div>
+    <section >
+        <button id="toogle-theme" class="btn btn-secondary">Toggle Theme</button>
+        <div class="center-content">
 
+            <!------------------form-validation----------------------->
+            <div class="container custom-container">
+                <h2 class="text-center">Form-validation</h2>
+                <form id="myForm" class="needs-validation" novalidate>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                        <div class="invalid-feedback">
+                            Please enter your name.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email address</label>
+                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                        <div class="invalid-feedback">
+                            Please enter a valid email address.
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Password</label>
+                        <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                            required>
+                        <div class="invalid-feedback">
+                            Please enter your password.
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+            </div>
+            <!--------------------lottie-animation------------------->
+            <div class="container custom-container">
+                <h2 class="text-center">Lottie Animation Example</h2>
+                <div id="lottie-animation"></div>
+            </div>
+    </section>
     <!-- Lottie Web Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
 
@@ -59,8 +64,6 @@
         });
     </script>
     <!-- Bootstrap JS and dependencies -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script>
         // JavaScript for form validation and handling form submission
@@ -96,6 +99,18 @@
                 }
             }, false);
         })();
+    </script>
+    <script>
+        document.getElementById("toogle-theme").addEventListener("click", function () {
+            const currentMode = document.documentElement.getAttribute("mode");
+            if (currentMode === "light") {
+                document.documentElement.setAttribute("mode", "dark");
+            } else if (currentMode === "dark") {
+                document.documentElement.setAttribute("mode", "orange");
+            } else {
+                document.documentElement.setAttribute("mode", "light");
+            }
+        });
     </script>
 </body>
 
