@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html mode="light" lang="en">
+<html theme="light" lang="en">
 
 <head>
     <meta charset="UTF-8">
@@ -8,47 +8,77 @@
     <link rel="stylesheet" href="./assets/css/style.css">
     <!-- Bootstrap CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --red-color: red;
+            --white-color: white;
+            --blue-color: rgb(48, 1, 255);
+            --pink-color: rgb(255, 0, 191);
+        }
+
+
+        [theme="dark"] {
+            --red-color: #ffffff;
+            --white-color: pink;
+            --blue-color: rgb(89, 255, 0);
+            --pink-color: rgb(1, 255, 247);
+        }
+
+        [theme="Green"] {
+            --red-color: pink;
+            --white-color: #00ff95;
+            --blue-color: rgb(0, 255, 89);
+            --pink-color: rgb(0, 66, 64);
+        }
+
+        body {
+            background: var(--white-color);
+        }
+    </style>
 </head>
 
-<body>
-    <section >
-        <button id="toogle-theme" class="btn btn-secondary">Toggle Theme</button>
-        <div class="center-content">
 
-            <!------------------form-validation----------------------->
-            <div class="container custom-container">
-                <h2 class="text-center">Form-validation</h2>
-                <form id="myForm" class="needs-validation" novalidate>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
-                        <div class="invalid-feedback">
-                            Please enter your name.
-                        </div>
+<body>
+    <section class="mt-5">
+        <div class="d-flex justify-content-center align-items-center">
+            <button class="fw-bold  py-2 px-4 bg-secondary text-white" id="toogle-theme">Toggle-button</button>
+        </div>
+    </section>
+    <section>
+        <!------------------form-validation----------------------->
+        <div class="container custom-container">
+            <h2 class="text-center">Form-validation</h2>
+            <form id="myForm" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" placeholder="Enter your name" required>
+                    <div class="invalid-feedback">
+                        Please enter your name.
                     </div>
-                    <div class="form-group">
-                        <label for="email">Email address</label>
-                        <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
-                        <div class="invalid-feedback">
-                            Please enter a valid email address.
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" placeholder="Enter your email" required>
+                    <div class="invalid-feedback">
+                        Please enter a valid email address.
                     </div>
-                    <div class="form-group">
-                        <label for="password">Password</label>
-                        <input type="password" class="form-control" id="password" placeholder="Enter your password"
-                            required>
-                        <div class="invalid-feedback">
-                            Please enter your password.
-                        </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" id="password" placeholder="Enter your password"
+                        required>
+                    <div class="invalid-feedback">
+                        Please enter your password.
                     </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
-                </form>
-            </div>
-            <!--------------------lottie-animation------------------->
-            <div class="container custom-container">
-                <h2 class="text-center">Lottie Animation Example</h2>
-                <div id="lottie-animation"></div>
-            </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+        <!--------------------lottie-animation------------------->
+        <div class="container custom-container">
+            <h2 class="text-center">Lottie Animation</h2>
+            <div class="mw_600" id="lottie-animation"></div>
+        </div>
     </section>
     <!-- Lottie Web Library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
@@ -102,15 +132,16 @@
     </script>
     <script>
         document.getElementById("toogle-theme").addEventListener("click", function () {
-            const currentMode = document.documentElement.getAttribute("mode");
-            if (currentMode === "light") {
-                document.documentElement.setAttribute("mode", "dark");
-            } else if (currentMode === "dark") {
-                document.documentElement.setAttribute("mode", "orange");
-            } else {
-                document.documentElement.setAttribute("mode", "light");
+            if (document.documentElement.getAttribute("theme") === "light") {
+                document.documentElement.setAttribute("theme", "dark")
             }
-        });
+            else if (document.documentElement.getAttribute("theme") === "dark") {
+                document.documentElement.setAttribute("theme", "Green")
+            }
+            else {
+                document.documentElement.setAttribute("theme", "light")
+            }
+        })
     </script>
 </body>
 
